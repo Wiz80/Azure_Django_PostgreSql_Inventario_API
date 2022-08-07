@@ -1,0 +1,4 @@
+
+azure_storage_connectionstring : "DefaultEndpointsProtocol=https;AccountName=cs71003bffda446f39b;AccountKey=i5+VixLUcO6yuI122q6iToCzCieZXejyx39LpcbN3OqRbTxNFP56TM5+GGoMz+WfeazK9YuB6Xgs+ASt96mAtA==;EndpointSuffix=core.windows.net"
+inventario_container_name : "inventario"
+source_folder : "/Users/pc/desktop/python/azure-django-pos/msdocs-django-postgresql-sample-app/upload"

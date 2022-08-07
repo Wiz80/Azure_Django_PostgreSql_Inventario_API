@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+
+{% block pagecontent %}
+<script>
+    function call_upload(){
+        document.getElementById("upgrade-to-view").click();
+    }
+</script>
+<div class="container-fluid text-center">
+    <form action="{% url 'index' %}" method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <h3>Carga tu plantilla de inventario</h3>
+        <label class="custom-file-upload">
+            <input name="file" id="csv_file" onchange="call_upload();" type="file" accept=".csv"/>
+            <i class="bi bi-upload"></i> Upload .csv file
+        </label>
+        <div class="content_csv d-inline-flex">
+            {% if file_name%}
+                <i class="bi bi-cloud-arrow-up-fill" style="color: #3F67E9;"></i>
+                <p style="color: #3F67E9;">{{file_name}}</p>
+                <p>Ha sido cargado correctamente</p>
+            {% endif %}
+        </div>
+        <button id = "upgrade-to-view" type="submit" style = "display: none;"></button>
+    </form>
+</div>
+{% endblock %}
