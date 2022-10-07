@@ -1,11 +1,11 @@
 from django.contrib.auth.admin import UserAdmin 
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import Inventario, Cliente, Sucursal, Producto
+from .models import Inventarios, Cliente, Sucursal, Producto
 
 # Register your models here.
 
-admin.site.register(Inventario)
+admin.site.register(Inventarios)
 admin.site.register(Cliente)
 admin.site.register(Sucursal)
 admin.site.register(Producto)
@@ -13,7 +13,7 @@ admin.site.register(Producto)
 
 # Register your models here.
 class InventarioInline(admin.StackedInline):
-    model = Inventario
+    model = Inventarios
     can_delete = False
     verbose_name_plural = 'Inventarios'
 class ClienteInline(admin.StackedInline):

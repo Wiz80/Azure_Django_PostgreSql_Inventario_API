@@ -1,9 +1,0 @@
-{
-	"name": "Inventariofactory",
-	"location": "eastus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "1232fa2e-ee6c-41a2-b24e-69adb0ef81cc",
-		"tenantId": "2ed5574c-f9ba-4426-9658-e477ad7439db"
-	}
-}

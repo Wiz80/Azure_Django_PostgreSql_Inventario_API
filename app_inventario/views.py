@@ -9,7 +9,7 @@ import numpy as np
 import copy
 from datetime import datetime
 
-from inventario_app.models import Inventario, Cliente, Sucursal, Producto
+from app_inventario.models import Inventarios, Cliente, Sucursal, Producto
 
 
 # Create your views here.
@@ -23,7 +23,7 @@ def upload(file, connenction_string, container_name):
     container_client = ContainerClient.from_connection_string(connenction_string, container_name)
     print("uploading file to blob storage ...")
     
-    data = pd.read_csv(file, header=0)
+    data = pd.read_csv(file)
     name = data['GLN_Cliente'][0]
     random_value = np.random.randint(0, 100000000)
     blob_client = container_client.get_blob_client(f'{name}/{name}_{random_value}.csv')    
@@ -33,7 +33,7 @@ def upload(file, connenction_string, container_name):
 
     data['FechaInventario'] = pd.to_datetime(data['FechaInventario'])
     for idx, i in data.iterrows():
-        inventario = Inventario.objects.create(
+        inventario = Inventarios.objects.create(
             FechaInventario = i['FechaInventario'],
             GLN_Cliente = i['GLN_Cliente'],
             GLN_Sucursal = i['GLN_Sucursal'],
@@ -66,11 +66,3 @@ def index(request):
     return render(request,
                  'base/index.html')
 
-
-"""
-def get_files(dir):
-    with os.scandir(dir) as entries:
-        for entry in entries:
-            if entry.is_file() and not entry.name.startwith('.'):
-                yield entry
-"""

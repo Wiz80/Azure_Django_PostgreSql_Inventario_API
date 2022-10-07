@@ -1,9 +1,0 @@
-{
-	"name": "InventarioDataFactory",
-	"location": "southcentralus",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "5f6db5fd-34df-4254-800d-e2ceb57b4c3a",
-		"tenantId": "2ed5574c-f9ba-4426-9658-e477ad7439db"
-	}
-}
