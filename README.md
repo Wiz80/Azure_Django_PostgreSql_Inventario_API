@@ -65,12 +65,3 @@ You'll have a view where you can Update or delete the inventory object
 Runnin the bellow url you could add new inventory object to deploy testing:
 
 `/api/inventario/new/` 
-
-## :exclamation: I have problems connecting my Azure web service to the Azure postgreSQL server, I get
-```shell
-failed: FATAL:  password authentication failed for user "azure_user"
-connection to server at "msdocs-python-postgres-webapp-db-2680.postgres.database.azure.com" (13.86.36.172), port 5432 failed: FATAL:  no pg_hba.conf entry for host "20.84.233.39", user "azure_user", database "inventario", SSL off
-```
-
-I tried already add the Ipv4 address of the ssh shell of Azure Web Service to the networks allowed by the PostgreSQL database server and allowed all the ip addresses `+ Add 0.0.0.0 - 255.255.255.255` but it doesn't work
-![image](https://user-images.githubusercontent.com/50804224/193678069-563dca3b-f99e-4a25-b3b4-6b6c398f8a3d.png)
